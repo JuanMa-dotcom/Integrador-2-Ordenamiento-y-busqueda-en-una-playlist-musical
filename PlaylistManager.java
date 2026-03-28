@@ -38,7 +38,7 @@ public class PlaylistManager {
         return true;
     }
 
-    // ── Obtener copia del arreglo actual ────────────────────────────
+    //Obtener copia del arreglo actual (para poder mostrarlo en la tabla)
     public Cancion[] getPlaylist() {
         Cancion[] copia = new Cancion[tamanio];
         for (int i = 0; i < tamanio; i++) copia[i] = playlist[i];
@@ -50,9 +50,9 @@ public class PlaylistManager {
     public boolean estaLleno() { return tamanio >= playlist.length; }
     public boolean estaVacia() { return tamanio == 0; }
 
-    // ════════════════════════════════════════════════════════════════
-    //  QUICKSORT RECURSIVO
-    // ════════════════════════════════════════════════════════════════
+    
+    //QUICKSORT RECURSIVO
+    
 
     /**
      * Punto de entrada del QuickSort.
@@ -75,7 +75,7 @@ public class PlaylistManager {
     }
 
     /**
-     * Partición del QuickSort usando el último elemento como pivote.
+     * Particion del QuickSort usando el ultimo elemento como pivote.
      */
     private int particionar(Cancion[] arr, int inicio, int fin) {
         Cancion pivote = arr[fin];
@@ -110,12 +110,12 @@ public class PlaylistManager {
         return a.nombre.compareToIgnoreCase(b.nombre);
     }
 
-    // ════════════════════════════════════════════════════════════════
-    //  BÚSQUEDA BINARIA (requiere arreglo ordenado)
-    // ════════════════════════════════════════════════════════════════
+    
+    //  BUSQUEDA BINARIA (requiere arreglo ordenado)
+   
 
     /**
-     * Búsqueda binaria por nombre de canción.
+     * Búsqueda binaria por nombre de cancion.
      * El arreglo debe estar ordenado por nombre antes de llamar esto.
      * @param nombreBuscado nombre exacto o parcial
      * @return índice encontrado o -1 si no existe
@@ -125,15 +125,15 @@ public class PlaylistManager {
     }
 
     /**
-     * Búsqueda binaria por artista.
-     * El arreglo debe estar ordenado por artista antes de llamar esto.
+     * Busqueda binaria por artista.
+     * El arreglo debe estar ordenado por artista antes de llamar a este metodo
      */
     public int buscarPorArtista(String artistaBuscado) {
         return busquedaBinaria(playlist, 0, tamanio - 1, artistaBuscado, ORDENAR_POR_ARTISTA);
     }
 
     /**
-     * Búsqueda binaria recursiva — NO usa funciones predefinidas.
+     * Busqueda binaria recursiva — NO usa funciones predefinidas.
      */
     private int busquedaBinaria(Cancion[] arr, int inicio, int fin, String busqueda, int criterio) {
         if (inicio > fin) return -1; // no encontrado
@@ -155,7 +155,7 @@ public class PlaylistManager {
     }
 
     /**
-     * Obtener canción por índice.
+     * Obtener cancion por indice.
      */
     public Cancion getCancion(int indice) {
         if (indice < 0 || indice >= tamanio) return null;

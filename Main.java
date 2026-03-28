@@ -21,7 +21,7 @@ public class Main extends javax.swing.JFrame {
         private boolean estaOrdenado = false;
         private int criterioOrden = PlaylistManager.ORDENAR_POR_NOMBRE;
  
-// Modelo de la JTable (se declara aquí para poder actualizarlo)
+// Modelo de la JTable (se declara aqui para poder actualizarlo)
         private DefaultTableModel modeloTabla;
      public Main() {
         
@@ -42,7 +42,7 @@ public class Main extends javax.swing.JFrame {
     jTable1.getColumnModel().getColumn(2).setPreferredWidth(150);
     jTable1.getColumnModel().getColumn(3).setPreferredWidth(150);
  
-    // Canciones de ejemplo precargadas
+    // Canciones de ejemplo precargadas (es necesario ponerlas aqui porque trabajaremos con un array :D )
     manager.agregar("Blinding Lights",   "The Weeknd",        "After Hours");
     manager.agregar("Shape of You",      "Ed Sheeran",        "Divide");
     manager.agregar("Bohemian Rhapsody", "Queen",             "A Night at the Opera");
@@ -348,7 +348,7 @@ private void setStatus(String msg, Color color) {
         ? PlaylistManager.ORDENAR_POR_ARTISTA
         : PlaylistManager.ORDENAR_POR_NOMBRE;
  
-    // Ejecutar QuickSort
+    // Ejecutar QuickSort (lo validamos con un true)
     manager.quickSort(criterioOrden);
     estaOrdenado = true;
  
@@ -363,6 +363,7 @@ private void setStatus(String msg, Color color) {
         "QuickSort finalizado", JOptionPane.INFORMATION_MESSAGE);   
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
+    //Metodo para buscar una cancion en la playlist usando búsqueda binaria
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
      if (manager.estaVacia()) {
         setStatus("La playlist está vacia.", Color.YELLOW);
@@ -458,7 +459,7 @@ private void setStatus(String msg, Color color) {
     if (resp == JOptionPane.YES_OPTION) System.exit(0);
 }
  
-// ── Utilidad: resumen del arreglo para mostrar antes/después ──
+//Este es un resumen del arreglo para mostrar antes/despues
 private String obtenerEstadoResumido() {
     Cancion[] canciones = manager.getPlaylist();
     StringBuilder sb = new StringBuilder();

@@ -9,8 +9,8 @@ package gestorplaylist;
  * @author jv134
  */
 /**
- * Clase que representa una canción en la playlist.
- * Equivalente al "Nodo" del proyecto anterior pero para arreglo.
+ * Clase que representa una cancion en la playlist.
+ * Equivalente al "Nodo" del proyecto anterior pero para un array
  */
 public class Cancion {
     public String nombre;
