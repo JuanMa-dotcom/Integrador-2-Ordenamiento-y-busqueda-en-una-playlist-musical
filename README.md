@@ -1,6 +1,6 @@
 # Estructuras de Datos 
 
-## Práctica 2 — Playlist Musical (QuickSort + Búsqueda Binaria)
+## Práctica 2 — Playlist Musical (QuickSort y Búsqueda Binaria)
 
 Aplicación de escritorio que gestiona una playlist de música usando un **arreglo de tamaño fijo**. Implementa ordenamiento con **QuickSort recursivo** y búsqueda con **búsqueda binaria**.
 
